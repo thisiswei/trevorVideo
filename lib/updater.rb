@@ -17,7 +17,7 @@ class Updater
       def update_youtube_videos(person)
         return if person.youtube_username.blank?
 
-        limit = 80
+        limit = 50
         offset = 1
         latest = person.most_recent_video_with_source('youtube').try(:created_at)
         
@@ -64,18 +64,20 @@ class Updater
               created_at = video['liked_on']
               thumbnail_url = video['thumbnail_large']
 
-              throw(:break) if (latest && lastest >= created_at)
+              throw(:break) if ( latest && latest >= created_at)
               person.favorites.create(key: key, title:title, created_at: created_at, source: 'vimeo', thumbnail_url: thumbnail_url) 
             end
           end
         end 
       end
       
-      def get_vimeo_videos(person,pages)
+      def get_vimeo_videos(person,page)
         uri = URI.parse("http://vimeo.com/api/v2/#{person.vimeo_username}/likes.xml?page=#{page}")
+        puts uri
         response = Net::HTTP.get_response(uri).body
-        videos = Hash.from_xml(response)['video']
-        videos.blank? ? [] : videos['video'] 
+        puts response
+        videos = Hash.from_xml(response)['videos']
+        (videos.blank?)? [] : videos['video']
       end
   end
 end
