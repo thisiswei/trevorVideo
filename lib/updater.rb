@@ -17,7 +17,7 @@ class Updater
       def update_youtube_videos(person)
         return if person.youtube_username.blank?
 
-        limit = 50
+        limit = 80
         offset = 1
         latest = person.most_recent_video_with_source('youtube').try(:created_at)
         
@@ -34,14 +34,13 @@ class Updater
               throw(:break) if (latest && latest >= created_at)
               person.favorites.create(key: key, title: title, created_at: created_at, source: 'youtube', thumbnail_url: "http://i.ytimg.com/vi/#{key}/mqdefault.jpg")
             end
-            offset = offest + limit 
+            offset = offset + limit 
           end
         end 
       end
       
       def get_youtube_videos(person,limit,offset)
         url="http://gdata.youtube.com/feeds/api/users/#{person.youtube_username}/favorites?v=2&max-results=#{limit}&start-index=#{offset}&format=5"
-        puts url
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri).body
         Hash.from_xml(response)['feed']['entry'] || []
