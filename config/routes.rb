@@ -1,5 +1,5 @@
 Trevorvideo::Application.routes.draw do
   root :to => "videos#index"
-  resource :videos, only: :index
-  resource :people, only: :show
+  resources :videos, only: :index
+  resources :people, only: :show
 end
