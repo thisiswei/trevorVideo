@@ -43,7 +43,7 @@ class Updater
         url="http://gdata.youtube.com/feeds/api/users/#{person.youtube_username}/favorites?v=2&max-results=#{limit}&start-index=#{offset}&format=5"
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri).body
-        Hash.from_xml(response)['feed']['entry'] || []
+        Hash.from_xml(response)['feed']['entry'] or []
       end
 
       def update_vimeo_videos(person)
