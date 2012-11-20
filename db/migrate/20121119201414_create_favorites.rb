@@ -3,8 +3,7 @@ class CreateFavorites < ActiveRecord::Migration
     create_table :favorites do |t|
       t.integer :person_id
       t.integer :video_id
-
-      t.timestamps
+      t.datetime :created_at
     end
   end
 end

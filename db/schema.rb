@@ -16,26 +16,23 @@ ActiveRecord::Schema.define(:version => 20121119201414) do
   create_table "favorites", :force => true do |t|
     t.integer  "person_id"
     t.integer  "video_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
   end
 
   create_table "people", :force => true do |t|
     t.string   "youtube_username"
     t.string   "vimeo_username"
     t.string   "name"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at"
   end
 
   create_table "videos", :force => true do |t|
     t.string   "key"
     t.string   "title"
     t.string   "source"
-    t.string   "thumnail_url"
     t.integer  "first_person_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "thumbnail_url"
+    t.datetime "created_at"
   end
 
 end

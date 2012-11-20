@@ -4,8 +4,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :youtube_username
       t.string :vimeo_username
       t.string :name
-
-      t.timestamps
+      t.datetime :created_at
     end
   end
 end

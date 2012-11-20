@@ -4,9 +4,9 @@ class CreateVideos < ActiveRecord::Migration
       t.string :key
       t.string :title
       t.string :source
-      t.string :thumnail_url
       t.integer:first_person_id
-      t.timestamps
+      t.string :thumbnail_url
+      t.datetime :created_at
     end
   end
 end

@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-  attr_accessible :name, :youtube_username, :vimeo_username
+  attr_accessible :name, :youtube_username, :vimeo_username, :created_at 
 
   validate :validate_youtube_or_vimeo_username
   validates_uniqueness_of :youtube_username, allow_blank: true
@@ -7,7 +7,7 @@ class Person < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :favorites
-  has_many :video, through: :favorites
+  has_many :videos, through: :favorites
 
   def self.add(opts={})
     person = create!(opts)
