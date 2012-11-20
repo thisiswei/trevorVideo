@@ -1,0 +1,16 @@
+<div class = 'video'>
+  <%= link_to video_embed(video),class: 'fancybox iframe' do %>
+    <% image_tag video.thumbnail_url %>
+
+    <div class="overlay">
+      <div class='overlay_copy'>
+        <p> checkitout WTF </p>
+        <p class= 'overlay_user'><%= video.first_person.name %><p>
+      </div> <!-- layover_copy -->
+    </div> <!-- layover -->
+
+    <div class = 'video_title'>
+      <p><%= video.title %></p>
+    </div> <!-- title_video -->
+  <% end %>
+</div> <!-- video -->

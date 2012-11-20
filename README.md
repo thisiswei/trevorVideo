@@ -1,4 +1,4 @@
-######copying [trevor's](https://github.com/trevorturk)[thevideofeed](https://github.com/trevorturk/thevideofeed)
+######copying [trevor's](https://github.com/trevorturk) [thevideofeed](https://github.com/trevorturk/thevideofeed)
 ### MIT License
 copyright (C) 2012 https://github.com/trevorturk/thevideofeed/graphs/contributors
 
