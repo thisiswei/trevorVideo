@@ -1,11 +1,11 @@
-source 'http://rubygems.org'
-
+source 'http://rubygems.org' 
 gem 'fancybox-rails'
 gem 'jquery-rails'
 gem 'rails'
 gem 'thin'
 gem 'validate_as_email'
-gem 'will_paginate'
+gem 'will_paginate'   
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'coffee-rails'
