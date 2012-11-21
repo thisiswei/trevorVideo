@@ -1,3 +1,3 @@
 jQuery ->
   $('a.fancybox').live 'hover', ->
-    $(this).fancybox({ width:853, height: 480 })
+    $(this).fancybox({ width:850, height: 480 })
