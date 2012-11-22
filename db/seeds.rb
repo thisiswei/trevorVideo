@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Person.add(email: '99plus2@gmail.com', name:'thisiswei', youtube_name: 'luwei87', vimeo_username: 'thisiswei')
+Person.add(name: 'staffpicks', vimeo_username: 'staff')

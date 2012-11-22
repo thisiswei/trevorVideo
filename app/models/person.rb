@@ -1,3 +1,4 @@
+require 'updater.rb'
 class Person < ActiveRecord::Base
   attr_accessible :name, :youtube_username, :vimeo_username, :created_at 
 
