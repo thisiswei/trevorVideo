@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Trevor video</title>
-  <%= stylesheet_link_tag    "application" %>
+  <title>trevor video</title>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag "trevor.png" %>
 </head>
 <body>
-  <div class = "hidden_header">
-    <div class="hidden_header_content">
-      <div class="hidden_header_title">
-        <h2> <%= link_to "trevor",root_path %></h2>
-      </div><!-- title -->
-    </div><!-- header_content-->
-  </div><!--hidden_header -->
-  <header>
-    <div class="header_content">
-      <div class="header_content_title">
-        <h1><%= link_to "Trevor Video", 'https://github.com/thisiswei/trevorVideo#mit-license' %></h1>
-      </div><!--title-->
-    </div>
-  </header>
-    
-    <div id="people_list">
-       <p2> Favorites from: </p2>
-       <div class="all_people">
-         <p> <%= people_list %></p>
-       </div>
-    </div> <!--people_list-->
-  <div class="video_row">
-    <%= yield %>
+<div class = "hidden_header">
+  <div class="hidden_header_content">
+    <div class="hidden_header_title">
+      <h2> <%= link_to "trevor",root_path %></h2>
+    </div><!-- title -->
+  </div><!-- header_content-->
+</div><!--hidden_header -->
+<header>
+  <div class="header_content">
+    <div class="header_content_title">
+      <h1><%= link_to "Github", 'https://github.com/thisiswei/trevorVideo#mit-license' %></h1>
+    </div><!--title-->
   </div>
+</header>
+
+<div id="people_list">
+  <p2> Favorites from: </p2>
+  <div class="all_people">
+    <p> <%= people_list %></p>
+  </div>
+</div> <!--people_list-->
+
+<div class="video_row">
+  <%= yield %>
+</div>
 
 </body>
 </html>
