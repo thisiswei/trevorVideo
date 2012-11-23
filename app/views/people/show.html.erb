@@ -1,5 +1,5 @@
 <div class='specific_user'>
-  <h2><%= @person.name %>&rsquo;s picks </h2>
+  <h2><%=link_to @person.name,"http://vimeo.com/#{@person.vimeo_username}" %> </h2>
 </div>
 
 <div data-behavior='pagination'>
