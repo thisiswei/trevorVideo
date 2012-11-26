@@ -20,4 +20,4 @@ Person.add(name: 'kawehi', vimeo_username: 'kawehi')
 Person.add(name: 'Mohetin', vimeo_username: 'user895703')
 Person.add(name: 'Ryan', vimeo_username: 'user2175487')
 
->>>>>>> new_branch
+
