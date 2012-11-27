@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119201414) do
+ActiveRecord::Schema.define(:version => 20121127050319) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "person_id"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(:version => 20121119201414) do
     t.integer  "first_person_id"
     t.string   "thumbnail_url"
     t.datetime "created_at"
+    t.string   "played"
+    t.string   "likes"
+    t.string   "user_name"
   end
 
 end
