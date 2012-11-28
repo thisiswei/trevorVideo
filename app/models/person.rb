@@ -1,7 +1,6 @@
 require 'updater.rb'
 class Person < ActiveRecord::Base
   attr_accessible :name, :youtube_username, :vimeo_username, :created_at 
-
   validate :validate_youtube_or_vimeo_username
   validates_uniqueness_of :youtube_username, allow_blank: true
   validates_uniqueness_of :vimeo_username, allow_blank: true

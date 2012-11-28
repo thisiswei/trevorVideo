@@ -5,7 +5,7 @@ class Updater
     def perform
       Person.all.each do |person|
         update(person)
-      end
+      end                       
     end
     
     def update(person)
@@ -59,7 +59,8 @@ class Updater
           1.upto(total_pages) do |page|
             videos = get_vimeo_videos(person,page)
             throw(:break) if videos.none?
-            videos.each do |video|
+            videos.each do |video| 
+              data = [Marshal.dump(video)].pack 'm' #in case i need the url...other stuffs
               key = video['id']
               title = video['title']
               created_at = video['liked_on']
@@ -69,7 +70,7 @@ class Updater
               user_name =  video['user_name']
               
               #throw(:break) if ( latest && latest >= created_at)
-              person.favorites.create(key: key, title:title, created_at: created_at, source: 'vimeo', thumbnail_url: thumbnail_url, played: played, likes: likes,user_name: user_name)
+              person.favorites.create(key: key, title:title, created_at: created_at, source: 'vimeo', thumbnail_url: thumbnail_url, played: played, likes: likes,user_name: user_name,data: data)
             end
           end
         end 
