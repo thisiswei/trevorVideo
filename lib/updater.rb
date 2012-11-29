@@ -32,7 +32,7 @@ class Updater
               created_at = video['published']
               
 
-              #throw(:break) if (latest && latest >= created_at)
+              throw(:break) if (latest && latest >= created_at)
               person.favorites.create(key: key, title: title, created_at: created_at, source: 'youtube', thumbnail_url: "http://i.ytimg.com/vi/#{key}/mqdefault.jpg")
             end
             offset = offset + limit 
