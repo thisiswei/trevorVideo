@@ -78,6 +78,7 @@ class Updater
       
       def get_vimeo_videos(person,page)
         uri = URI.parse("http://vimeo.com/api/v2/#{person.vimeo_username}/likes.xml?page=#{page}")
+        uri = URI.parse("http://vimeo.com/api/v2/channel/staffpicks/videos.xml") if person.id ==2
         response = Net::HTTP.get_response(uri).body
         videos = Hash.from_xml(response)['videos']
         (videos.blank?)? [] : videos['video']
