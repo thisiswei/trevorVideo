@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
   belongs_to :first_person, class_name: 'Person'
 
   validates :key, presence: true, uniqueness: true 
-  validates :title, presence: true
+  validates :created_at, :title, presence: true
   validates :source, presence: true
   validates_inclusion_of :source, :in => SOURCES
 
