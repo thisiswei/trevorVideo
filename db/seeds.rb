@@ -7,6 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Person.add(name: 'brent', vimeo_username: 'brentdroog')
-Person.add(name: 'Kitchhock', vimeo_username: 'kitchhock') 
-
+Person.add(name: 'bing', youtube_username:'bingbinglai')
