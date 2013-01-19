@@ -6,6 +6,8 @@ gem 'thin'
 gem 'validate_as_email'
 gem 'will_paginate'   
 gem 'newrelic_rpm'
+gem "taps", "~> 0.3.24"
+
 
 group :assets do
   gem 'coffee-rails'

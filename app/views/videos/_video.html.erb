@@ -1,16 +1,17 @@
-<div class = 'video'>
-  <%= link_to video_embed(video),class: 'fancybox iframe' do %>
+<div class='video'>
+  <%= link_to video_embed(video), class: 'fancybox iframe' do %>
     <%= image_tag(video.thumbnail_url) %>
 
-    <div class="overlay">
+    <div class='overlay'>
       <div class='overlay_copy'>
-        <p> Trevor is awesome  </p>
-        <p class= 'overlay_user'><%= video.title %><p>
-      </div> <!-- layover_copy -->
-    </div> <!-- layover -->
+        <p><%= video.title%> </p>
+        <p class='overlay_user'><%= video.first_person %></p> 
+      </div>
+    </div>
 
-    <div class = 'video_title'>
-      <p><%= video.title %></p>
-    </div> <!-- title_video -->
+    <div class='video_title'>
+      <p>plays: <%= video.played %> | likes: <%= video.likes %></p>
+    </div>
   <% end %>
-</div> <!-- video -->
+</div>
+
