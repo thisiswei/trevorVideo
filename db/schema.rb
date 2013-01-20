@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128051935) do
+ActiveRecord::Schema.define(:version => 20130120001712) do
 
   create_table "favorites", :force => true do |t|
-    t.integer  "person_id"
-    t.integer  "video_id"
-    t.datetime "created_at"
+    t.integer   "person_id"
+    t.integer   "video_id"
+    t.timestamp "created_at"
   end
 
   create_table "people", :force => true do |t|
-    t.string   "youtube_username"
-    t.string   "vimeo_username"
-    t.string   "name"
-    t.datetime "created_at"
+    t.string    "youtube_username"
+    t.string    "vimeo_username"
+    t.string    "name"
+    t.timestamp "created_at"
   end
 
   create_table "videos", :force => true do |t|
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20121128051935) do
     t.integer  "first_person_id"
     t.string   "thumbnail_url"
     t.datetime "created_at"
-    t.string   "played"
-    t.string   "likes"
+    t.integer  "played",          :limit => 255
+    t.integer  "likes",           :limit => 255
     t.string   "user_name"
     t.text     "data"
   end

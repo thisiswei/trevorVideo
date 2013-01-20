@@ -66,8 +66,8 @@ class Updater
                 title = video['title']
                 created_at = video['liked_on'] || video['upload_date']
                 thumbnail_url = video['thumbnail_large']
-                played = video['stats_number_of_plays']
-                likes = video['stats_number_of_likes'] 
+                played = video['stats_number_of_plays'].to_i
+                likes = video['stats_number_of_likes'].to_i 
                 user_name =  video['user_name']
               rescue 
                 next
