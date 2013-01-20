@@ -1,11 +1,11 @@
 class UpdatePlaysAndLikesToInt < ActiveRecord::Migration
   def up
-    change_column :videos, :played, :integer
-    change_column :videos, :likes, :integer
+    remove_column :videos, :played
+    remove_column :videos, :likes
   end
 
   def down
-    change_column :videos, :played, :string
-    change_column :videos, :likes, :string 
+    add_column :videos, :played, :string
+    add_column :videos, :likes, :string 
   end
 end
