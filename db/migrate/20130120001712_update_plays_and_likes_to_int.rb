@@ -5,7 +5,7 @@ class UpdatePlaysAndLikesToInt < ActiveRecord::Migration
   end
 
   def down
-    add_column :videos, :played, :string
-    add_column :videos, :likes, :string 
+    add_column :videos, :played, :integer
+    add_column :videos, :likes, :integer 
   end
 end
